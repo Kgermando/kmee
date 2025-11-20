@@ -1,0 +1,230 @@
+<!-- Barre de recherche principale en haut -->
+<section class="main-search-bar">
+  <div class="container">
+    <div class="search-inputs-wrapper">
+      <div class="search-input-group">
+        <input type="text" [(ngModel)]="searchQuery" name="search" placeholder="De quoi avez-vous besoin ?"
+          class="search-input-what" />
+      </div>
+      <div class="search-input-group">
+        <span class="location-icon">📍</span>
+        <input type="text" [(ngModel)]="locationQuery" name="location"
+          placeholder="Adresse, quartier, ville, département" class="search-input-where" />
+      </div>
+      <button (click)="onSearch()" class="search-btn-main">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Menu de catégories principales -->
+<section class="top-categories">
+  <div class="container">
+    <nav class="categories-nav">
+      @for (category of topCategories; track category.title) {
+      <a [href]="category.link" class="category-item">
+        <span class="category-icon">{{ category.icon }}</span>
+        <span class="category-label">{{ category.title }}</span>
+      </a>
+      }
+    </nav>
+  </div>
+</section>
+
+<!-- Section Hero avec bannières -->
+<section class="hero-banners">
+  <div class="container">
+    <div class="banners-grid">
+      <!-- Bannière principale gauche -->
+      <div class="banner banner-main">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+          <div class="banner-tag">KM House !</div>
+          <h2 class="banner-title">Sur toutes les chaînes</h2>
+          <p class="banner-text">Pour vous présenter notre plateforme et soutenir le business des professionnels partout
+            en RDC !</p>
+          <button class="banner-btn-yellow">Je veux voir !</button>
+        </div>
+        <div class="banner-image">
+          <div class="room-scene">
+            <div class="tv-screen">📺</div>
+            <div class="chair">💺</div>
+            <div class="plant">🌿</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bannière droite -->
+      <div class="banner banner-secondary">
+        <div class="banner-content-dark">
+          <h3 class="banner-subtitle">PROFESSIONNELS,</h3>
+          <h2 class="banner-main-title">INSCRIVEZ-VOUS !</h2>
+          <p class="banner-description">Contactez nos experts digitaux pour booster votre visibilité ou gérer
+            gratuitement vos infos depuis votre compte</p>
+          <div class="banner-actions">
+            <button class="btn-create">✨ Créer mon compte</button>
+            <button class="btn-connect">Je me connecte</button>
+          </div>
+          <div class="service-icons">
+            <span title="Desktop">💻</span>
+            <span title="Tablette">📱</span>
+            <span title="Mobile">�</span>
+            <span title="Agenda">�</span>
+            <span title="Email">✉️</span>
+          </div>
+          <p class="service-note">*Service gratuit + prix d'un appel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Barre de recherche -->
+<section class="search-section">
+  <div class="container">
+    <div class="search-box-wrapper">
+      <h2 class="search-title">Trouvez ce que vous cherchez</h2>
+      <form (ngSubmit)="onSearch()" class="search-form-inline">
+        <input type="text" [(ngModel)]="searchQuery" name="search"
+          placeholder="Que recherchez-vous ? (ex: avocat, terrain, restaurant...)" class="search-input-main" />
+        <button type="submit" class="search-button-main">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          Rechercher
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Les derniers articles -->
+<section class="articles-section">
+  <div class="container">
+    <h2 class="section-main-title">Les derniers articles à ne pas manquer</h2>
+
+    <div class="articles-grid">
+      @for (article of articles; track article.title) {
+      <article class="article-card">
+        <div class="article-badge">{{ article.badge }}</div>
+        <div class="article-image-placeholder"></div>
+        <div class="article-content">
+          <h3 class="article-title">{{ article.title }}</h3>
+          <div class="article-footer">
+            <span class="article-icon">📰</span>
+            <span class="article-date">{{ article.date }}</span>
+          </div>
+        </div>
+      </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Votre santé -->
+<section class="health-section">
+  <div class="container">
+    <h2 class="section-main-title">Votre santé</h2>
+    <div class="categories-horizontal">
+      @for (category of healthCategories; track category.title) {
+      <a [href]="category.link" class="category-horizontal-card">
+        <div class="category-image-placeholder">
+          <span class="category-emoji">{{ category.image }}</span>
+        </div>
+        <h3 class="category-horizontal-title">{{ category.title }}</h3>
+      </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Votre logement -->
+<section class="housing-section">
+  <div class="container">
+    <h2 class="section-main-title">Votre logement</h2>
+    <div class="categories-grid-4">
+      @for (category of housingCategories; track category.title) {
+      <a [href]="category.link" class="category-card-image">
+        <div class="category-image-placeholder">
+          <span class="category-emoji">{{ category.image }}</span>
+        </div>
+        <h3 class="category-card-title">{{ category.title }}</h3>
+      </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Vos commerces de proximité -->
+<section class="proximity-section">
+  <div class="container">
+    <h2 class="section-main-title">Vos commerces de proximité</h2>
+    <div class="categories-grid-4">
+      @for (category of proximityCategories; track category.title) {
+      <a [href]="category.link" class="category-card-image">
+        <div class="category-image-placeholder">
+          <span class="category-emoji">{{ category.image }}</span>
+        </div>
+        <h3 class="category-card-title">{{ category.title }}</h3>
+      </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Vos déplacements - Pourrait être ajouté ici -->
+
+<!-- Tous les professionnels de votre région -->
+<section class="regions-section">
+  <div class="container">
+    <h2 class="section-main-title">Tous les professionnels de votre région :</h2>
+    <div class="regions-grid">
+      @for (region of regions; track region.name) {
+      <a href="#" class="region-card">
+        <div class="region-image">{{ region.image }}</div>
+        <span class="region-name">{{ region.name }}</span>
+      </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Tous les professionnels de votre ville -->
+<section class="cities-section">
+  <div class="container">
+    <h2 class="section-main-title">Tous les professionnels de votre ville :</h2>
+    <div class="cities-grid">
+      @for (city of cities; track city.name) {
+      <a href="#" class="city-card">
+        <div class="city-image">{{ city.image }}</div>
+        <span class="city-name">{{ city.name }}</span>
+      </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Call to action professionnels -->
+<section class="cta-professionals">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-card">
+        <h3>Professionnels, gérez votre fiche KM House</h3>
+        <p>Gérez gratuitement toutes vos informations, vos avis, vos publications et bien plus encore directement depuis
+          notre plateforme</p>
+        <button class="btn-cta-blue">Je crée mon compte</button>
+      </div>
+      <div class="cta-card">
+        <h3>Êtes-vous bien visible sur internet ?</h3>
+        <p>Découvrez votre score en moins d'1 min et gagnez 25% de visibilité sur internet grâce aux conseils
+          personnalisés de notre Audit Digital.</p>
+        <button class="btn-cta-blue">Je vérifie ma visibilité gratuitement</button>
+      </div>
+    </div>
+  </div>
+</section>

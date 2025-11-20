@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+/* Variables de thème orange jaunâtre inspiré de Pages Jaunes */
+:root {
+  --primary-orange: #ff7900;
+  --primary-yellow: #ffb700;
+  --light-orange: #ffae42;
+  --dark-orange: #e56700;
+  --accent-yellow: #ffd700;
+  --bg-light: #fff9f0;
+  --bg-white: #ffffff;
+  --text-dark: #2c3e50;
+  --text-gray: #6c757d;
+  --border-light: #e9ecef;
+  --shadow: rgba(255, 121, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}

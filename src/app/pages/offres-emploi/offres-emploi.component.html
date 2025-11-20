@@ -1,0 +1,79 @@
+<div class="offres-emploi-page">
+  <div class="container">
+    <div class="page-header">
+      <h1>Offres d'emploi</h1>
+      <p class="page-subtitle">Trouvez votre prochain emploi en RDC</p>
+    </div>
+
+    <div class="search-filters">
+      <div class="search-bar">
+        <input type="text" placeholder="Poste, mot-clé..." class="search-input">
+        <input type="text" placeholder="Ville, province..." class="search-input">
+        <button class="search-button">🔍 Rechercher</button>
+      </div>
+      
+      <div class="filters">
+        <select class="filter-select">
+          <option value="">Type de contrat</option>
+          <option value="cdi">CDI</option>
+          <option value="cdd">CDD</option>
+          <option value="stage">Stage</option>
+          <option value="freelance">Freelance</option>
+        </select>
+        
+        <select class="filter-select">
+          <option value="">Secteur d'activité</option>
+          <option value="tech">Technologie</option>
+          <option value="finance">Finance</option>
+          <option value="sante">Santé</option>
+          <option value="education">Éducation</option>
+          <option value="construction">Construction</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="jobs-section">
+      <div class="results-header">
+        <h2>{{ jobOffers.length }} offres disponibles</h2>
+        <select class="sort-select">
+          <option value="recent">Plus récentes</option>
+          <option value="salary">Salaire</option>
+          <option value="company">Entreprise</option>
+        </select>
+      </div>
+
+      <div class="jobs-list">
+        @for (job of jobOffers; track job.id) {
+          <div class="job-card">
+            <div class="job-header">
+              <div>
+                <h3 class="job-title">{{ job.title }}</h3>
+                <p class="job-company">{{ job.company }}</p>
+              </div>
+              <span class="job-type" [class.cdi]="job.type === 'CDI'" [class.cdd]="job.type === 'CDD'">
+                {{ job.type }}
+              </span>
+            </div>
+            
+            <div class="job-details">
+              <span class="job-location">📍 {{ job.location }}</span>
+              <span class="job-salary">💰 {{ job.salary }}</span>
+              <span class="job-date">📅 {{ job.postedDate }}</span>
+            </div>
+            
+            <div class="job-actions">
+              <button class="btn-apply">Postuler</button>
+              <button class="btn-save">💾 Sauvegarder</button>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h2>Vous recrutez?</h2>
+      <p>Publiez vos offres d'emploi et trouvez les meilleurs talents en RDC</p>
+      <button class="cta-button">Publier une offre</button>
+    </div>
+  </div>
+</div>
