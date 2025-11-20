@@ -3,13 +3,13 @@
   <div class="container">
     <div class="search-inputs-wrapper">
       <div class="search-input-group">
-        <input type="text" [(ngModel)]="searchQuery" name="search" placeholder="De quoi avez-vous besoin ?"
+        <input type="text" [(ngModel)]="searchQuery" name="search" placeholder="Quel service recherchez-vous ?"
           class="search-input-what" />
       </div>
       <div class="search-input-group">
         <span class="location-icon">📍</span>
         <input type="text" [(ngModel)]="locationQuery" name="location"
-          placeholder="Adresse, quartier, ville, département" class="search-input-where" />
+          placeholder="Ville, commune ou quartier" class="search-input-where" />
       </div>
       <button (click)="onSearch()" class="search-btn-main">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -43,40 +43,118 @@
       <div class="banner banner-main">
         <div class="banner-overlay"></div>
         <div class="banner-content">
-          <div class="banner-tag">KM House !</div>
-          <h2 class="banner-title">Sur toutes les chaînes</h2>
-          <p class="banner-text">Pour vous présenter notre plateforme et soutenir le business des professionnels partout
-            en RDC !</p>
-          <button class="banner-btn-yellow">Je veux voir !</button>
+          <div class="banner-tag">KM House Immobilier</div>
+          <h2 class="banner-title">Votre solution immobilière complète en RDC</h2>
+          <p class="banner-text">Achat, vente, location de maisons, terrains et espaces commerciaux. Trouvez le bien immobilier idéal avec nos experts géomètres et conseillers immobiliers certifiés !</p>
+          <button class="banner-btn-yellow">Explorer les biens</button>
         </div>
         <div class="banner-image">
-          <div class="room-scene">
-            <div class="tv-screen">📺</div>
-            <div class="chair">💺</div>
-            <div class="plant">🌿</div>
-          </div>
+          <svg class="business-illustration" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background Circle -->
+            <circle cx="200" cy="150" r="120" fill="rgba(255, 255, 255, 0.1)" />
+            
+            <!-- Building/Tower -->
+            <g class="building">
+              <rect x="160" y="80" width="80" height="140" fill="rgba(255, 255, 255, 0.9)" rx="4"/>
+              <rect x="165" y="90" width="15" height="15" fill="#FF7900" opacity="0.6"/>
+              <rect x="185" y="90" width="15" height="15" fill="#FF7900" opacity="0.6"/>
+              <rect x="205" y="90" width="15" height="15" fill="#FF7900" opacity="0.6"/>
+              <rect x="225" y="90" width="15" height="15" fill="#FF7900" opacity="0.6"/>
+              
+              <rect x="165" y="110" width="15" height="15" fill="#FFD700" opacity="0.6"/>
+              <rect x="185" y="110" width="15" height="15" fill="#FFD700" opacity="0.6"/>
+              <rect x="205" y="110" width="15" height="15" fill="#FFD700" opacity="0.6"/>
+              <rect x="225" y="110" width="15" height="15" fill="#FFD700" opacity="0.6"/>
+              
+              <rect x="165" y="130" width="15" height="15" fill="#FF7900" opacity="0.6"/>
+              <rect x="185" y="130" width="15" height="15" fill="#FF7900" opacity="0.6"/>
+              <rect x="205" y="130" width="15" height="15" fill="#FF7900" opacity="0.6"/>
+              <rect x="225" y="130" width="15" height="15" fill="#FF7900" opacity="0.6"/>
+              
+              <rect x="165" y="150" width="15" height="15" fill="#FFD700" opacity="0.6"/>
+              <rect x="185" y="150" width="15" height="15" fill="#FFD700" opacity="0.6"/>
+              <rect x="205" y="150" width="15" height="15" fill="#FFD700" opacity="0.6"/>
+              <rect x="225" y="150" width="15" height="15" fill="#FFD700" opacity="0.6"/>
+              
+              <rect x="185" y="180" width="30" height="40" fill="#333" rx="2"/>
+            </g>
+            
+            <!-- Network Nodes -->
+            <g class="network-nodes">
+              <!-- Central Node -->
+              <circle cx="200" cy="150" r="20" fill="#FFD700" opacity="0.9"/>
+              <circle cx="200" cy="150" r="15" fill="white"/>
+              <text x="200" y="155" text-anchor="middle" font-size="16" fill="#FF7900">🏢</text>
+              
+              <!-- Connected Nodes -->
+              <circle cx="120" cy="100" r="15" fill="rgba(255, 255, 255, 0.9)"/>
+              <text x="120" y="105" text-anchor="middle" font-size="14">🏠</text>
+              
+              <circle cx="280" cy="100" r="15" fill="rgba(255, 255, 255, 0.9)"/>
+              <text x="280" y="105" text-anchor="middle" font-size="14">🏞️</text>
+              
+              <circle cx="120" cy="200" r="15" fill="rgba(255, 255, 255, 0.9)"/>
+              <text x="120" y="205" text-anchor="middle" font-size="14">🔑</text>
+              
+              <circle cx="280" cy="200" r="15" fill="rgba(255, 255, 255, 0.9)"/>
+              <text x="280" y="205" text-anchor="middle" font-size="14">💰</text>
+              
+              <!-- Additional Nodes for Geo/CEO -->
+              <circle cx="200" cy="70" r="15" fill="rgba(255, 255, 255, 0.9)"/>
+              <text x="200" y="75" text-anchor="middle" font-size="14">📐</text>
+              
+              <circle cx="200" cy="230" r="15" fill="rgba(255, 255, 255, 0.9)"/>
+              <text x="200" y="235" text-anchor="middle" font-size="14">👔</text>
+              
+              <!-- Connection Lines -->
+              <line x1="200" y1="150" x2="120" y2="100" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2" stroke-dasharray="5,5"/>
+              <line x1="200" y1="150" x2="280" y2="100" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2" stroke-dasharray="5,5"/>
+              <line x1="200" y1="150" x2="120" y2="200" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2" stroke-dasharray="5,5"/>
+              <line x1="200" y1="150" x2="280" y2="200" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2" stroke-dasharray="5,5"/>
+              <line x1="200" y1="150" x2="200" y2="70" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2" stroke-dasharray="5,5"/>
+              <line x1="200" y1="150" x2="200" y2="230" stroke="rgba(255, 255, 255, 0.4)" stroke-width="2" stroke-dasharray="5,5"/>
+            </g>
+            
+            <!-- Growth Arrow -->
+            <g class="growth-arrow">
+              <path d="M 80 240 Q 150 220 250 180" stroke="#FFD700" stroke-width="3" fill="none" opacity="0.8"/>
+              <polygon points="250,180 245,185 255,185" fill="#FFD700" opacity="0.8"/>
+            </g>
+            
+            <!-- Floating Elements -->
+            <g class="floating-elements">
+              <circle cx="100" cy="60" r="3" fill="white" opacity="0.6">
+                <animate attributeName="cy" values="60;50;60" dur="3s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="300" cy="80" r="4" fill="#FFD700" opacity="0.5">
+                <animate attributeName="cy" values="80;70;80" dur="4s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="320" cy="240" r="3" fill="white" opacity="0.6">
+                <animate attributeName="cy" values="240;230;240" dur="3.5s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+          </svg>
         </div>
       </div>
 
       <!-- Bannière droite -->
       <div class="banner banner-secondary">
         <div class="banner-content-dark">
-          <h3 class="banner-subtitle">PROFESSIONNELS,</h3>
-          <h2 class="banner-main-title">INSCRIVEZ-VOUS !</h2>
-          <p class="banner-description">Contactez nos experts digitaux pour booster votre visibilité ou gérer
-            gratuitement vos infos depuis votre compte</p>
+          <h3 class="banner-subtitle">PROFESSIONNELS & ENTREPRISES,</h3>
+          <h2 class="banner-main-title">REJOIGNEZ-NOUS !</h2>
+          <p class="banner-description">Augmentez votre visibilité, développez votre réseau et accédez à des opportunités exclusives. Gérez votre profil professionnel gratuitement !</p>
           <div class="banner-actions">
-            <button class="btn-create">✨ Créer mon compte</button>
-            <button class="btn-connect">Je me connecte</button>
+            <button class="btn-create">✨ Créer mon profil</button>
+            <button class="btn-connect">Espace membre</button>
           </div>
           <div class="service-icons">
-            <span title="Desktop">💻</span>
-            <span title="Tablette">📱</span>
-            <span title="Mobile">�</span>
-            <span title="Agenda">�</span>
-            <span title="Email">✉️</span>
+            <span title="Stratégie">📋</span>
+            <span title="Partenariat">🤝</span>
+            <span title="Expertise">🎯</span>
+            <span title="Réseau">👥</span>
+            <span title="Support">💬</span>
           </div>
-          <p class="service-note">*Service gratuit + prix d'un appel</p>
+          <p class="service-note">*Inscription gratuite - Support professionnel disponible</p>
         </div>
       </div>
     </div>
@@ -87,10 +165,10 @@
 <section class="search-section">
   <div class="container">
     <div class="search-box-wrapper">
-      <h2 class="search-title">Trouvez ce que vous cherchez</h2>
+      <h2 class="search-title">Trouvez l'expert qu'il vous faut</h2>
       <form (ngSubmit)="onSearch()" class="search-form-inline">
         <input type="text" [(ngModel)]="searchQuery" name="search"
-          placeholder="Que recherchez-vous ? (ex: avocat, terrain, restaurant...)" class="search-input-main" />
+          placeholder="Avocat, architecte, consultant, terrain..." class="search-input-main" />
         <button type="submit" class="search-button-main">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="8"></circle>
@@ -106,7 +184,7 @@
 <!-- Les derniers articles -->
 <section class="articles-section">
   <div class="container">
-    <h2 class="section-main-title">Les derniers articles à ne pas manquer</h2>
+    <h2 class="section-main-title">Actualités & Insights Business</h2>
 
     <div class="articles-grid">
       @for (article of articles; track article.title) {
@@ -115,6 +193,9 @@
         <div class="article-image-placeholder"></div>
         <div class="article-content">
           <h3 class="article-title">{{ article.title }}</h3>
+          @if (article.excerpt) {
+          <p class="article-excerpt">{{ article.excerpt }}</p>
+          }
           <div class="article-footer">
             <span class="article-icon">📰</span>
             <span class="article-date">{{ article.date }}</span>
@@ -126,52 +207,103 @@
   </div>
 </section>
 
-<!-- Votre santé -->
+<!-- Services Business & Consulting -->
 <section class="health-section">
   <div class="container">
-    <h2 class="section-main-title">Votre santé</h2>
+    <h2 class="section-main-title">Services Business & Consulting</h2>
     <div class="categories-horizontal">
-      @for (category of healthCategories; track category.title) {
+      @for (category of businessCategories; track category.title) {
       <a [href]="category.link" class="category-horizontal-card">
         <div class="category-image-placeholder">
           <span class="category-emoji">{{ category.image }}</span>
         </div>
         <h3 class="category-horizontal-title">{{ category.title }}</h3>
+        @if (category.description) {
+        <p class="category-description">{{ category.description }}</p>
+        }
       </a>
       }
     </div>
   </div>
 </section>
 
-<!-- Votre logement -->
+<!-- Immobilier & Foncier -->
 <section class="housing-section">
   <div class="container">
-    <h2 class="section-main-title">Votre logement</h2>
+    <h2 class="section-main-title">Immobilier & Foncier</h2>
     <div class="categories-grid-4">
-      @for (category of housingCategories; track category.title) {
+      @for (category of propertyCategories; track category.title) {
       <a [href]="category.link" class="category-card-image">
         <div class="category-image-placeholder">
           <span class="category-emoji">{{ category.image }}</span>
         </div>
         <h3 class="category-card-title">{{ category.title }}</h3>
+        @if (category.description) {
+        <p class="category-card-description">{{ category.description }}</p>
+        }
       </a>
       }
     </div>
   </div>
 </section>
 
-<!-- Vos commerces de proximité -->
+<!-- Partenariats & Réseaux -->
 <section class="proximity-section">
   <div class="container">
-    <h2 class="section-main-title">Vos commerces de proximité</h2>
+    <h2 class="section-main-title">Partenariats & Réseaux Professionnels</h2>
     <div class="categories-grid-4">
-      @for (category of proximityCategories; track category.title) {
+      @for (category of partnershipCategories; track category.title) {
       <a [href]="category.link" class="category-card-image">
         <div class="category-image-placeholder">
           <span class="category-emoji">{{ category.image }}</span>
         </div>
         <h3 class="category-card-title">{{ category.title }}</h3>
+        @if (category.description) {
+        <p class="category-card-description">{{ category.description }}</p>
+        }
       </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Statistiques -->
+<section class="statistics-section">
+  <div class="container">
+    <h2 class="section-main-title">KM Elite Entreprise en chiffres</h2>
+    <div class="statistics-grid">
+      @for (stat of statistics; track stat.label) {
+      <div class="stat-card">
+        <div class="stat-icon">{{ stat.icon }}</div>
+        <div class="stat-number">{{ stat.number }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Témoignages -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2 class="section-main-title">Ce que disent nos membres</h2>
+    <div class="testimonials-grid">
+      @for (testimonial of testimonials; track testimonial.name) {
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          @for (star of [1,2,3,4,5]; track star) {
+          <span class="star">⭐</span>
+          }
+        </div>
+        <p class="testimonial-text">"{{ testimonial.text }}"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">👤</div>
+          <div class="author-info">
+            <div class="author-name">{{ testimonial.name }}</div>
+            <div class="author-role">{{ testimonial.role }}</div>
+          </div>
+        </div>
+      </div>
       }
     </div>
   </div>
@@ -194,36 +326,19 @@
   </div>
 </section>
 
-<!-- Tous les professionnels de votre ville -->
-<section class="cities-section">
-  <div class="container">
-    <h2 class="section-main-title">Tous les professionnels de votre ville :</h2>
-    <div class="cities-grid">
-      @for (city of cities; track city.name) {
-      <a href="#" class="city-card">
-        <div class="city-image">{{ city.image }}</div>
-        <span class="city-name">{{ city.name }}</span>
-      </a>
-      }
-    </div>
-  </div>
-</section>
-
 <!-- Call to action professionnels -->
 <section class="cta-professionals">
   <div class="container">
     <div class="cta-grid">
       <div class="cta-card">
-        <h3>Professionnels, gérez votre fiche KM House</h3>
-        <p>Gérez gratuitement toutes vos informations, vos avis, vos publications et bien plus encore directement depuis
-          notre plateforme</p>
-        <button class="btn-cta-blue">Je crée mon compte</button>
+        <h3>Professionnels, développez votre présence</h3>
+        <p>Créez votre profil professionnel, gérez vos services, vos avis clients et développez votre réseau d'affaires directement depuis notre plateforme business</p>
+        <button class="btn-cta-blue">Créer mon profil gratuitement</button>
       </div>
       <div class="cta-card">
-        <h3>Êtes-vous bien visible sur internet ?</h3>
-        <p>Découvrez votre score en moins d'1 min et gagnez 25% de visibilité sur internet grâce aux conseils
-          personnalisés de notre Audit Digital.</p>
-        <button class="btn-cta-blue">Je vérifie ma visibilité gratuitement</button>
+        <h3>Boostez votre visibilité digitale</h3>
+        <p>Découvrez votre score de visibilité en ligne en moins d'une minute et recevez des recommandations personnalisées pour optimiser votre présence digitale.</p>
+        <button class="btn-cta-blue">Audit digital gratuit</button>
       </div>
     </div>
   </div>

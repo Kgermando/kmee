@@ -7,6 +7,9 @@ import { Login } from './auth/login/login';
 import { Register } from './auth/register/register';
 import { ResetPassword } from './auth/reset-password/reset-password';
 import { ForgotPassword } from './auth/forgot-password/forgot-password';
+import { VenteLocationComponent } from './pages/vente-location/vente-location.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +27,18 @@ export const routes: Routes = [
   {
     path: 'offres-emploi',
     component: OffresEmploiComponent
+  },
+  {
+    path: 'ventes-locations',
+    component: VenteLocationComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: 'auth',

@@ -14,62 +14,76 @@ export class HomeComponent {
     locationQuery: string = '';
 
     topCategories = [
-        { title: 'Restaurant', icon: '🍴', link: '/restaurant' },
-        { title: 'Electricien', icon: '⚡', link: '/electricien' },
-        { title: 'Beauté', icon: '💅', link: '/beaute' },
-        { title: 'Pharmacie', icon: '⚕️', link: '/pharmacie' },
-        { title: 'Kiné', icon: '🏥', link: '/kine' },
-        { title: 'Taxi', icon: '🚕', link: '/taxi' },
-        { title: 'Comptable', icon: '📊', link: '/comptable' },
-        { title: 'Notaire', icon: '✍️', link: '/notaire' },
-        { title: 'Plombier', icon: '🔧', link: '/plombier' }
+        { title: 'Stratégie', icon: '📋', link: '/strategie' },
+        { title: 'Partenariat', icon: '🤝', link: '/partenariat' },
+        { title: 'Marketing', icon: '📈', link: '/marketing' },
+        { title: 'Juridique', icon: '⚖️', link: '/juridique' },
+        { title: 'Immobilier', icon: '🏢', link: '/immobilier' },
+        { title: 'Architecture', icon: '📐', link: '/architecture' },
+        { title: 'Cabinets', icon: '💼', link: '/cabinets' },
+        { title: 'Services', icon: '🔧', link: '/services' },
+        { title: 'Terrains', icon: '🏞️', link: '/terrains' },
+        { title: 'Espaces', icon: '🏗️', link: '/espaces' }
     ];
 
     articles = [
         {
-            title: 'Rénovation : ces 4 couleurs qui métamorphosent une pièce',
+            title: 'Les nouvelles stratégies de croissance pour les entreprises en RDC',
+            date: '19 novembre 2025',
+            badge: 'Stratégie',
+            excerpt: 'Découvrez les approches innovantes qui transforment le paysage entrepreneurial congolais'
+        },
+        {
+            title: 'Partenariats Public-Privé : Opportunités en infrastructure',
+            date: '18 novembre 2025',
+            badge: 'Partenariat',
+            excerpt: 'Comment structurer des partenariats gagnants pour les grands projets'
+        },
+        {
+            title: 'Réforme du droit OHADA : Impact sur les entreprises',
             date: '17 novembre 2025',
-            badge: 'Actualités'
+            badge: 'Juridique',
+            excerpt: 'Les nouvelles dispositions juridiques à connaître absolument'
         },
         {
-            title: 'Le retour des punaises de lit : panique dans les salles obscures',
+            title: 'Boom immobilier à Kinshasa : Zones d\'investissement 2025',
             date: '16 novembre 2025',
-            badge: 'Actualités'
+            badge: 'Immobilier',
+            excerpt: 'Les quartiers émergents qui promettent les meilleurs rendements'
         },
         {
-            title: 'Chaudière qui fuit par le bas : pourquoi et comment réparer ?',
+            title: 'Architecture durable : Tendances et innovations locales',
             date: '15 novembre 2025',
-            badge: 'Chaudière'
+            badge: 'Architecture',
+            excerpt: 'Les nouveaux standards de construction adaptés au climat tropical'
         },
         {
-            title: 'Incendie de poêle et cheminée : comment éviter le drame cet hiver',
-            date: '15 novembre 2025',
-            badge: 'Actualités'
-        },
-        {
-            title: 'La tension artérielle : quand le pompe du corps s\'emballe',
+            title: 'Marketing digital en RDC : Les clés du succès',
             date: '14 novembre 2025',
-            badge: 'Actualités'
+            badge: 'Marketing',
+            excerpt: 'Comment conquérir le marché local avec les outils numériques'
         }
     ];
 
-    healthCategories = [
-        { title: 'Se soigner au quotidien', image: '🏥', link: '/sante/quotidien' },
-        { title: 'Spécialités médicales', image: '👨‍⚕️', link: '/sante/specialites' }
+    businessCategories = [
+        { title: 'Consulting & Stratégie', image: '📊', link: '/business/consulting', description: 'Experts en développement stratégique et mise en œuvre' },
+        { title: 'Services Juridiques', image: '⚖️', link: '/business/juridique', description: 'Cabinets d\'avocats et conseillers juridiques' },
+        { title: 'Services Financiers', image: '💰', link: '/business/finance', description: 'Comptabilité, audit et gestion financière' },
+        { title: 'Marketing & Communication', image: '📢', link: '/business/marketing', description: 'Agences de communication et stratégie digitale' }
     ];
 
-    housingCategories = [
-        { title: 'Les travaux de la maison', image: '🏗️', link: '/logement/travaux' },
-        { title: 'Équiper la maison', image: '🛋️', link: '/logement/equipement' },
-        { title: 'Jardins et extérieurs', image: '🌳', link: '/logement/jardin' },
-        { title: 'L\'immobilier', image: '🏘️', link: '/logement/immobilier' }
+    propertyCategories = [
+        { title: 'Terrains & Parcelles', image: '🏞️', link: '/immobilier/terrains', description: 'Opportunités foncières et terrains à bâtir' },
+        { title: 'Espaces Commerciaux', image: '🏢', link: '/immobilier/espaces', description: 'Bureaux, entrepôts et locaux professionnels' },
+        { title: 'Architecture & Design', image: '📐', link: '/immobilier/architecture', description: 'Plans architecturaux et conception de projets' },
+        { title: 'Expertise Immobilière', image: '🏘️', link: '/immobilier/expertise', description: 'Évaluation, conseil et gestion immobilière' }
     ];
 
-    proximityCategories = [
-        { title: 'Les bons restos', image: '🍽️', link: '/proximite/restaurants' },
-        { title: 'Sorties', image: '🎭', link: '/proximite/sorties' },
-        { title: 'Shopping', image: '🛍️', link: '/proximite/shopping' },
-        { title: 'Cuisiner de bons repas', image: '🥘', link: '/proximite/cuisine' }
+    partnershipCategories = [
+        { title: 'Partenaires Stratégiques', image: '🤝', link: '/partenariat/strategique', description: 'Alliances d\'affaires et collaborations' },
+        { title: 'Réseaux d\'Experts', image: '👥', link: '/partenariat/experts', description: 'Mise en relation avec des cabinets spécialisés' },
+        { title: 'Services Externes', image: '🔧', link: '/partenariat/services', description: 'Prestataires et fournisseurs qualifiés' },
+        { title: 'Opportunités d\'Affaires', image: '💼', link: '/partenariat/opportunites', description: 'Projets et investissements en cours' }
     ];
 
     regions = [
@@ -92,6 +106,34 @@ export class HomeComponent {
         { name: 'Kisangani', image: '🌆' },
         { name: 'Mbandaka', image: '🌆' },
         { name: 'Kananga', image: '🌆' }
+    ];
+
+    statistics = [
+        { number: '5000+', label: 'Professionnels Inscrits', icon: '👥' },
+        { number: '50+', label: 'Catégories de Services', icon: '📊' },
+        { number: '26', label: 'Provinces Couvertes', icon: '🗺️' },
+        { number: '98%', label: 'Satisfaction Client', icon: '⭐' }
+    ];
+
+    testimonials = [
+        {
+            name: 'Jean-Pierre K.',
+            role: 'PDG, Société d\'Architecture',
+            text: 'Grâce à KM House, j\'ai pu développer mon réseau professionnel et décrocher plusieurs contrats importants.',
+            rating: 5
+        },
+        {
+            name: 'Marie L.',
+            role: 'Avocate d\'Affaires',
+            text: 'Une plateforme exceptionnelle pour la mise en relation avec des clients et partenaires stratégiques.',
+            rating: 5
+        },
+        {
+            name: 'Patrick M.',
+            role: 'Consultant en Stratégie',
+            text: 'L\'outil idéal pour gérer ma visibilité en ligne et attirer de nouveaux clients qualifiés.',
+            rating: 5
+        }
     ];
 
     onSearch() {

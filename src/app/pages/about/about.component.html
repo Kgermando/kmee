@@ -1,0 +1,289 @@
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">KM Elite Entreprise</h1>
+        <p class="hero-subtitle">Votre partenaire de confiance pour tous vos projets professionnels et immobiliers en RDC</p>
+        <div class="hero-badges">
+          <span class="badge">🏆 Leader du marché</span>
+          <span class="badge">✅ Certifié OHADA</span>
+          <span class="badge">🌍 26 provinces</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="mission-card">
+          <div class="mission-icon">🎯</div>
+          <h2>Notre Mission</h2>
+          <p>Faciliter l'accès aux services professionnels de qualité et démocratiser l'expertise en RDC. Nous connectons les entreprises, professionnels et particuliers avec les meilleurs experts dans tous les domaines : immobilier, juridique, consulting, géomatique et bien plus.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon">🌟</div>
+          <h2>Notre Vision</h2>
+          <p>Devenir la plateforme de référence pour les services professionnels en Afrique centrale, en créant un écosystème où l'expertise, l'innovation et l'excellence se rencontrent pour transformer le paysage économique congolais et stimuler le développement durable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-content">
+        <h2 class="section-title">Notre Histoire</h2>
+        <div class="story-text">
+          <p>
+            <strong>KM Elite Entreprise</strong> est née d'une vision simple mais ambitieuse : créer une plateforme qui révolutionne l'accès aux services professionnels en République Démocratique du Congo. 
+          </p>
+          <p>
+            Fondée en 2020 sous le nom de <strong>KM House</strong> par <strong>Ir. Germain KANYINDA</strong>, ingénieur géomètre passionné par le développement économique, notre entreprise a débuté comme une agence immobilière spécialisée dans la vente et location de biens. Face au succès rencontré et aux besoins croissants de nos clients, nous avons rapidement élargi notre offre.
+          </p>
+          <p>
+            En 2022, nous intégrons des services de <strong>consulting stratégique</strong>, de <strong>conseil juridique</strong> et d'<strong>expertise foncière</strong>. Cette transformation nous permet d'accompagner nos clients dans toutes les dimensions de leurs projets : de l'idée initiale à la réalisation concrète.
+          </p>
+          <p>
+            Aujourd'hui, en 2025, <strong>KM Elite Entreprise</strong> est devenue une plateforme complète regroupant plus de <strong>5000 professionnels certifiés</strong> dans 50+ catégories de services. Nous sommes présents dans les <strong>26 provinces de la RDC</strong> et avons accompagné plus de <strong>1200 projets</strong> avec un taux de satisfaction de 98%.
+          </p>
+          <p>
+            Notre force ? Une équipe multidisciplinaire d'experts (géomètres, avocats, architectes, consultants, marketeurs) qui partagent les mêmes valeurs d'<strong>excellence</strong>, d'<strong>intégrité</strong> et d'<strong>innovation</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestones Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title">Notre Parcours</h2>
+      <div class="timeline">
+        @for (milestone of milestones; track milestone.year) {
+        <div class="timeline-item">
+          <div class="timeline-year">{{ milestone.year }}</div>
+          <div class="timeline-content">
+            <h3>{{ milestone.title }}</h3>
+            <p>{{ milestone.description }}</p>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <h2 class="section-title">Nos Valeurs</h2>
+      <div class="values-grid">
+        @for (value of values; track value.title) {
+        <div class="value-card">
+          <div class="value-icon">{{ value.icon }}</div>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="services-overview">
+    <div class="container">
+      <h2 class="section-title">Nos Domaines d'Expertise</h2>
+      <p class="section-description">
+        Une gamme complète de services professionnels pour répondre à tous vos besoins
+      </p>
+      <div class="services-grid">
+        @for (service of services; track service.title) {
+        <div class="service-card">
+          <div class="service-icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="statistics-section">
+    <div class="container">
+      <h2 class="section-title">KM Elite en Chiffres</h2>
+      <div class="statistics-grid">
+        @for (stat of statistics; track stat.label) {
+        <div class="stat-card">
+          <div class="stat-icon">{{ stat.icon }}</div>
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title">Notre Équipe de Direction</h2>
+      <p class="section-description">
+        Des professionnels expérimentés au service de votre réussite
+      </p>
+      <div class="team-grid">
+        @for (member of team; track member.name) {
+        <div class="team-card">
+          <div class="team-avatar">{{ member.image }}</div>
+          <h3>{{ member.name }}</h3>
+          <div class="team-role">{{ member.role }}</div>
+          <p class="team-expertise">{{ member.expertise }}</p>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="certifications-section">
+    <div class="container">
+      <h2 class="section-title">Certifications & Agréments</h2>
+      <p class="section-description">
+        Des garanties de qualité et de conformité pour votre sécurité
+      </p>
+      <div class="certifications-grid">
+        @for (cert of certifications; track cert.title) {
+        <div class="certification-card">
+          <div class="certification-icon">{{ cert.icon }}</div>
+          <h3>{{ cert.title }}</h3>
+          <p>{{ cert.description }}</p>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="partners-section">
+    <div class="container">
+      <h2 class="section-title">Nos Partenaires Institutionnels</h2>
+      <div class="partners-grid">
+        @for (partner of partners; track partner.name) {
+        <div class="partner-card">
+          <div class="partner-icon">🤝</div>
+          <h3>{{ partner.name }}</h3>
+          <p class="partner-type">{{ partner.type }}</p>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-section">
+    <div class="container">
+      <h2 class="section-title">Pourquoi Choisir KM Elite Entreprise ?</h2>
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-number">01</div>
+          <h3>Expertise Multidisciplinaire</h3>
+          <p>Accédez à des experts certifiés dans plus de 50 domaines différents : immobilier, juridique, géomatique, consulting, finance, marketing...</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-number">02</div>
+          <h3>Couverture Nationale</h3>
+          <p>Présents dans les 26 provinces de la RDC avec un réseau de partenaires locaux qualifiés et vérifiés.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-number">03</div>
+          <h3>Processus Sécurisés</h3>
+          <p>Toutes nos transactions sont encadrées par des protocoles stricts garantissant transparence et sécurité juridique.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-number">04</div>
+          <h3>Accompagnement Complet</h3>
+          <p>De la consultation initiale à la réalisation finale, nous vous accompagnons à chaque étape de votre projet.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-number">05</div>
+          <h3>Tarifs Compétitifs</h3>
+          <p>Des prestations de qualité à des prix justes et transparents, avec plusieurs options de paiement adaptées.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-number">06</div>
+          <h3>Satisfaction Garantie</h3>
+          <p>98% de nos clients nous recommandent. Votre satisfaction est notre priorité absolue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Section -->
+  <section class="engagement-section">
+    <div class="container">
+      <div class="engagement-content">
+        <h2>Notre Engagement pour la RDC</h2>
+        <div class="engagement-text">
+          <p>
+            Chez <strong>KM Elite Entreprise</strong>, nous croyons fermement que le développement économique de la RDC passe par la professionnalisation des services et l'accès facilité à l'expertise.
+          </p>
+          <div class="engagement-points">
+            <div class="engagement-point">
+              <span class="point-icon">🎓</span>
+              <div>
+                <h4>Formation Continue</h4>
+                <p>Nous formons régulièrement nos partenaires aux meilleures pratiques internationales.</p>
+              </div>
+            </div>
+            <div class="engagement-point">
+              <span class="point-icon">🌱</span>
+              <div>
+                <h4>Développement Durable</h4>
+                <p>Nous promouvons des pratiques respectueuses de l'environnement dans tous nos projets.</p>
+              </div>
+            </div>
+            <div class="engagement-point">
+              <span class="point-icon">👥</span>
+              <div>
+                <h4>Inclusion Sociale</h4>
+                <p>Nous soutenons l'entrepreneuriat local et l'emploi des jeunes professionnels congolais.</p>
+              </div>
+            </div>
+            <div class="engagement-point">
+              <span class="point-icon">💡</span>
+              <div>
+                <h4>Innovation Technologique</h4>
+                <p>Nous digitalisons les processus pour rendre les services plus accessibles et efficaces.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Prêt à Démarrer Votre Projet ?</h2>
+        <p>Rejoignez les milliers d'entreprises et professionnels qui nous font confiance</p>
+        <div class="cta-buttons">
+          <button class="btn-primary">Trouver un Expert</button>
+          <button class="btn-secondary">Devenir Partenaire</button>
+        </div>
+        <div class="cta-contact">
+          <p>Ou contactez-nous directement :</p>
+          <div class="contact-details">
+            <a href="tel:+243XXXXXXXXX" class="contact-link">📞 +243 XXX XXX XXX</a>
+            <a href="mailto:contact@kmelite.com" class="contact-link">✉️ contact@kmelite.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

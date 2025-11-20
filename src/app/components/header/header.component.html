@@ -1,16 +1,50 @@
 <!-- Header -->
 <header class="header">
-  <div class="container">
-    <div class="header-content">
-      <a routerLink="/" class="logo">
-        <img src="/logo.png" alt="KM House" class="logo-image">
-      </a>
-      <nav class="main-nav">
-        <a routerLink="/" class="nav-link">KM EE</a>
-        <a routerLink="/legislation" class="nav-link">Législation</a>
-        <a routerLink="/organisation" class="nav-link">Organisation</a>
-        <a routerLink="/offres-emploi" class="nav-link">Offres d'emploi</a>
-      </nav>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-content">
+        <a routerLink="/" class="logo">
+          <img src="/logo.png" alt="KM Elite Entreprise" class="logo-image">
+        </a>
+        <div class="contact-info">
+          <a href="tel:+243XXXXXXXXX" class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span class="contact-text">+243 XXX XXX XXX</span>
+          </a>
+          <a href="mailto:contact@kmelite.com" class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <span class="contact-text">contact@kmelite.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <div class="container">
+      <div class="nav-bar-content">
+        <nav class="main-nav">
+          <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+          <!-- <a routerLink="/about" class="nav-link" routerLinkActive="active">À propos</a> -->
+          <a routerLink="/ventes-locations" class="nav-link" routerLinkActive="active">KM House</a>
+          <a routerLink="/legislation" class="nav-link" routerLinkActive="active">Législation</a>
+          <a routerLink="/organisation" class="nav-link" routerLinkActive="active">Organisation</a>
+          <a routerLink="/offres-emploi" class="nav-link" routerLinkActive="active">Offres d'emploi</a>
+          <a routerLink="/contact" class="nav-link" routerLinkActive="active">Contact</a>
+        </nav>
+        <div class="auth-nav">
+          <a routerLink="/auth/login" class="auth-link" title="Connexion">
+            <span class="auth-icon">👤</span>
+            <span class="auth-text">Connexion</span>
+          </a>
+          <a routerLink="/auth/register" class="auth-link auth-link-register" title="Inscription">
+            <span class="auth-icon">✨</span>
+            <span class="auth-text">Inscription</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </header>

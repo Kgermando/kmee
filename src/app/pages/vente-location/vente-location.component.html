@@ -1,0 +1,144 @@
+<div class="vente-location-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Vente & Location</h1>
+        <p class="subtitle">Trouvez votre bien immobilier idéal parmi nos offres exclusives</p>
+      </div>
+      
+      <!-- Search Form -->
+      <div class="search-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Type d'opération</label>
+            <select [(ngModel)]="selectedType" (change)="onSearch()">
+              <option *ngFor="let type of propertyTypes" [value]="type.value">
+                {{ type.label }}
+              </option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Catégorie</label>
+            <select [(ngModel)]="selectedCategory" (change)="onSearch()">
+              <option *ngFor="let cat of categories" [value]="cat.value">
+                {{ cat.label }}
+              </option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Ville</label>
+            <select [(ngModel)]="selectedCity" (change)="onSearch()">
+              <option *ngFor="let city of cities" [value]="city.value">
+                {{ city.label }}
+              </option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Prix (USD)</label>
+            <select [(ngModel)]="priceRange" (change)="onSearch()">
+              <option *ngFor="let range of priceRanges" [value]="range.value">
+                {{ range.label }}
+              </option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="search-input-wrapper">
+          <input 
+            type="text" 
+            [(ngModel)]="searchQuery" 
+            placeholder="Rechercher par mots-clés..."
+            class="search-input"
+          >
+          <button class="search-btn" (click)="onSearch()">
+            🔍 Rechercher
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties Grid -->
+  <section class="properties-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Biens disponibles</h2>
+        <p class="results-count">{{ filteredProperties.length }} résultat(s) trouvé(s)</p>
+      </div>
+      
+      <div class="properties-grid">
+        <div class="property-card" *ngFor="let property of filteredProperties">
+          <div class="property-badge" [class.sale]="property.type === 'vente'">
+            {{ property.type === 'vente' ? 'À vendre' : 'À louer' }}
+          </div>
+          
+          <div class="property-image">
+            <div class="image-placeholder">{{ property.image }}</div>
+          </div>
+          
+          <div class="property-content">
+            <h3>{{ property.title }}</h3>
+            <p class="location">📍 {{ property.location }}</p>
+            <p class="description">{{ property.description }}</p>
+            
+            <div class="property-features">
+              <span *ngIf="property.bedrooms > 0" class="feature">
+                🛏️ {{ property.bedrooms }} ch.
+              </span>
+              <span *ngIf="property.bathrooms > 0" class="feature">
+                🚿 {{ property.bathrooms }} sdb.
+              </span>
+              <span class="feature">
+                📏 {{ property.surface }} m²
+              </span>
+            </div>
+            
+            <div class="property-footer">
+              <button class="call-btn" (click)="onCall(property)">
+                📞 Appeler
+              </button>
+              <button class="contact-btn" (click)="onContact(property)">
+                ✉️ Contacter
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="no-results" *ngIf="filteredProperties.length === 0">
+        <p class="no-results-icon">🔍</p>
+        <h3>Aucun bien trouvé</h3>
+        <p>Essayez de modifier vos critères de recherche</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <h2>Nos services complémentaires</h2>
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services">
+          <div class="service-icon">{{ service.icon }}</div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Vous souhaitez vendre ou louer un bien ?</h2>
+        <p>Confiez-nous votre projet immobilier et bénéficiez de notre expertise</p>
+        <button class="cta-btn">Proposer un bien</button>
+      </div>
+    </div>
+  </section>
+</div>
