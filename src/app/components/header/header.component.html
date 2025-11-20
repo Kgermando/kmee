@@ -7,22 +7,39 @@
         <a routerLink="/" class="logo">
           <img src="/logo.png" alt="KM Elite Entreprise" class="logo-image">
         </a>
-        <div class="contact-info">
-          <a href="tel:+243XXXXXXXXX" class="contact-item">
-            <span class="contact-icon">📞</span>
-            <span class="contact-text">+243 XXX XXX XXX</span>
-          </a>
-          <a href="mailto:contact@kmelite.com" class="contact-item">
-            <span class="contact-icon">✉️</span>
-            <span class="contact-text">contact@kmelite.com</span>
-          </a>
+        <div class="top-bar-right">
+          <div class="contact-info">
+            <a href="tel:+243XXXXXXXXX" class="contact-item">
+              <span class="contact-icon">📞</span>
+              <span class="contact-text">+243 XXX XXX XXX</span>
+            </a>
+            <a href="mailto:contact@kmelite.com" class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <span class="contact-text">contact@kmelite.com</span>
+            </a>
+          </div>
+          <div class="user-menu">
+            <button class="user-menu-button" (click)="toggleDropdown()">
+              <span class="user-icon">👤</span>
+            </button>
+            <div class="dropdown-menu" [class.show]="isDropdownOpen">
+              <a routerLink="/auth/login" class="dropdown-item">
+                <span class="dropdown-icon">🔑</span>
+                <span>Connexion</span>
+              </a>
+              <a routerLink="/auth/register" class="dropdown-item">
+                <span class="dropdown-icon">📝</span>
+                <span>Inscription</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Navigation Bar -->
-  <div class="nav-bar">
+  <div class="nav-bar" [class.hidden]="isNavbarHidden">
     <div class="container">
       <div class="nav-bar-content">
         <nav class="main-nav">
@@ -34,16 +51,6 @@
           <a routerLink="/offres-emploi" class="nav-link" routerLinkActive="active">Offres d'emploi</a>
           <a routerLink="/contact" class="nav-link" routerLinkActive="active">Contact</a>
         </nav>
-        <div class="auth-nav">
-          <a routerLink="/auth/login" class="auth-link" title="Connexion">
-            <span class="auth-icon">👤︎</span>
-            <span class="auth-text">Connexion</span>
-          </a>
-          <a routerLink="/auth/register" class="auth-link auth-link-register" title="Inscription">
-            <span class="auth-icon">👤﹢</span>
-            <span class="auth-text">Inscription</span>
-          </a>
-        </div>
       </div>
     </div>
   </div>
